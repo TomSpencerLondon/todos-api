@@ -1,24 +1,26 @@
-# README
+# Todos API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## What is this?
 
-Things you may want to cover:
+This is an API that uses jwt web tokens in order to release data on the command line.
 
-* Ruby version
+## Development
 
-* System dependencies
+### Setup 
 
-* Configuration
+* git clone application
+* bundle install
+* brew install httpie
 
-* Database creation
+### Run
 
-* Database initialization
+```bash
+# user signup
+$ http POST :3000/auth/signup Accept:'application/vnd.todos.2+json' email=user@test.co.uk password=password password_confirmation=password
+# copy authorization key
+# Post a todo
+$ http POST :3000/todos title="Go swimming" Authorization='NUMBER ABOVE'
+# Access todo
+$ http :3000/todos Accept:"application/vnd.todos.v1+json" Authorization:'NUMBER ABOVE'
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
